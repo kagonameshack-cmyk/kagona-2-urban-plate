@@ -1,1 +1,338 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
 
+body{
+background:#0f0f0f;
+color:white;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,0.7);
+backdrop-filter: blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#d4af37;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:white;
+font-size:15px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#d4af37;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1555396273-367ea4eb4db5") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero-overlay{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:10px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.hero p{
+margin-bottom:20px;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 28px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* ABOUT */
+
+.about{
+padding:100px 10%;
+text-align:center;
+}
+
+.about h2{
+font-size:35px;
+margin-bottom:20px;
+color:#d4af37;
+}
+
+.about p{
+max-width:700px;
+margin:auto;
+font-size:17px;
+}
+
+/* EXPERIENCE VIDEO */
+
+.experience{
+padding:100px 10%;
+text-align:center;
+}
+
+.experience h2{
+margin-bottom:40px;
+font-size:32px;
+color:#d4af37;
+}
+
+.experience video{
+width:100%;
+max-width:900px;
+border-radius:10px;
+box-shadow:0 10px 40px rgba(0,0,0,0.7);
+}
+
+/* MENU */
+
+.menu{
+padding:100px 10%;
+text-align:center;
+}
+
+.menu h2{
+font-size:35px;
+margin-bottom:50px;
+color:#d4af37;
+}
+
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.dish{
+background:#1c1c1c;
+border-radius:10px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.dish:hover{
+transform:translateY(-8px);
+}
+
+.dish img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.dish h3{
+margin:10px 0;
+}
+
+.menu-download{
+display:inline-block;
+margin-top:40px;
+padding:12px 25px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+border-radius:25px;
+font-weight:bold;
+}
+
+/* EVENTS */
+
+.events{
+padding:100px 10%;
+text-align:center;
+background:#141414;
+}
+
+.events h2{
+font-size:35px;
+margin-bottom:50px;
+color:#d4af37;
+}
+
+.event{
+margin-bottom:40px;
+}
+
+.event img{
+width:100%;
+max-width:600px;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+/* GALLERY */
+
+.gallery{
+padding:100px 10%;
+text-align:center;
+}
+
+.gallery h2{
+font-size:35px;
+margin-bottom:40px;
+color:#d4af37;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery-grid img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:8px;
+transition:0.4s;
+}
+
+.gallery-grid img:hover{
+transform:scale(1.05);
+}
+
+/* REVIEWS */
+
+.reviews{
+padding:100px 10%;
+text-align:center;
+background:#141414;
+}
+
+.reviews h2{
+font-size:35px;
+margin-bottom:40px;
+color:#d4af37;
+}
+
+.review{
+max-width:500px;
+margin:20px auto;
+background:#1e1e1e;
+padding:25px;
+border-radius:10px;
+}
+
+/* CONTACT */
+
+.contact{
+padding:100px 10%;
+text-align:center;
+}
+
+.contact h2{
+font-size:35px;
+margin-bottom:40px;
+color:#d4af37;
+}
+
+.contact form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact input{
+padding:12px;
+border:none;
+border-radius:5px;
+}
+
+.contact button{
+padding:12px;
+background:#d4af37;
+border:none;
+border-radius:25px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* FLOAT BUTTONS */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+z-index:999;
+}
+
+.call{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#d4af37;
+color:black;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+z-index:999;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:35px;
+}
+
+.navbar{
+flex-direction:column;
+}
+
+nav{
+margin-top:10px;
+}
+
+}
