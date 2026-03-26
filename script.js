@@ -59,6 +59,8 @@ const heroImages = [
 ];
 
 let heroIndex = 0;
+// Set first image
+hero.style.backgroundImage = `url(${heroImages[0]})`;
 
 setInterval(() => {
 
