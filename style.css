@@ -424,5 +424,27 @@ font-size:32px;
 .reservation{
 padding:80px 20px;
 }
+/* Background Music Button */
 
+.music-btn{
+position: fixed;
+bottom: 110px;
+right: 20px;
+background: #000;
+color: #fff;
+border: none;
+padding: 12px 16px;
+border-radius: 30px;
+font-size: 16px;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+z-index: 999;
+transition: 0.3s;
+}
+
+.music-btn:hover{
+background: #c9a227;
+transform: scale(1.05);
+}
+  
 }
