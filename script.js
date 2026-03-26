@@ -1,11 +1,7 @@
-// ================================
-// MOBILE HAMBURGER MENU (FIXED)
-// ================================
+// MOBILE HAMBURGER MENU
 
 const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
-
-if(menuToggle && navMenu){
 
 menuToggle.addEventListener("click", () => {
 
@@ -13,38 +9,27 @@ navMenu.classList.toggle("active");
 
 });
 
-}
 
 
-// ================================
 // STICKY NAVBAR SCROLL EFFECT
-// ================================
 
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
 
-if(navbar){
-
 if(window.scrollY > 50){
-
 navbar.style.background = "rgba(0,0,0,0.95)";
 navbar.style.transition = "0.4s";
-
 }else{
-
 navbar.style.background = "rgba(0,0,0,0.7)";
-
-}
-
 }
 
 });
 
 
-// ================================
+
+
 // HERO IMAGE ROTATION (20 images)
-// ================================
 
 const hero = document.querySelector(".hero");
 
@@ -75,10 +60,6 @@ const heroImages = [
 
 let heroIndex = 0;
 
-if(hero){
-
-hero.style.backgroundImage = `url(${heroImages[0]})`;
-
 setInterval(() => {
 
 heroIndex++;
@@ -91,18 +72,14 @@ hero.style.backgroundImage = `url(${heroImages[heroIndex]})`;
 
 },5000);
 
-}
 
 
-// ================================
+
 // LIGHTBOX GALLERY
-// ================================
 
 const galleryImages = document.querySelectorAll(".gallery-grid img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
-
-if(galleryImages){
 
 galleryImages.forEach(img => {
 
@@ -115,32 +92,18 @@ lightboxImg.src = img.src;
 
 });
 
-}
-
-if(lightbox){
-
 lightbox.addEventListener("click", () => {
 
 lightbox.style.display = "none";
 
 });
 
-}
 
 
-// ================================
+
 // SCROLL REVEAL ANIMATION
-// ================================
 
 const sections = document.querySelectorAll("section");
-
-sections.forEach(section => {
-
-section.style.opacity = "0";
-section.style.transform = "translateY(60px)";
-section.style.transition = "1s";
-
-});
 
 window.addEventListener("scroll", () => {
 
@@ -150,20 +113,26 @@ const sectionTop = section.getBoundingClientRect().top;
 const triggerPoint = window.innerHeight / 1.2;
 
 if(sectionTop < triggerPoint){
-
 section.style.opacity = "1";
 section.style.transform = "translateY(0)";
-
 }
 
 });
 
 });
 
+sections.forEach(section => {
 
-// ================================
-// RESERVATION FORM INTERACTION
-// ================================
+section.style.opacity = "0";
+section.style.transform = "translateY(60px)";
+section.style.transition = "1s";
+
+});
+
+
+
+
+// RESERVATION FORM
 
 const reservationForm = document.querySelector(".reservation form");
 
@@ -182,33 +151,51 @@ reservationForm.reset();
 }
 
 
-// ================================
-// VIOLIN BACKGROUND MUSIC (FIXED)
-// ================================
+
+
+// PREMIUM VIOLIN BACKGROUND MUSIC
 
 const violinMusic = new Audio(
 "https://cdn.pixabay.com/download/audio/2022/03/15/audio_6dfb5b1d14.mp3?filename=romantic-background-110191.mp3"
 );
 
 violinMusic.loop = true;
-violinMusic.volume = 0.35;
+violinMusic.volume = 0.3;
 
-// play after user interaction
 
-function startMusic(){
 
-violinMusic.play().catch(()=>{});
+// MUSIC BUTTON CONTROL
 
-document.removeEventListener("click", startMusic);
+const musicBtn = document.querySelector(".music-btn");
+
+let musicPlaying = false;
+
+if(musicBtn){
+
+musicBtn.addEventListener("click", () => {
+
+if(musicPlaying){
+
+violinMusic.pause();
+musicBtn.innerHTML = "🎻 Music";
+
+}else{
+
+violinMusic.play();
+musicBtn.innerHTML = "🔇 Stop Music";
 
 }
 
-document.addEventListener("click", startMusic);
+musicPlaying = !musicPlaying;
+
+});
+
+}
 
 
-// ================================
+
+
 // SMOOTH SCROLL
-// ================================
 
 document.querySelectorAll("nav a").forEach(anchor => {
 
@@ -221,7 +208,7 @@ const target = document.querySelector(this.getAttribute("href"));
 if(target){
 
 target.scrollIntoView({
-behavior:"smooth"
+behavior: "smooth"
 });
 
 }
