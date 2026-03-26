@@ -466,11 +466,18 @@ right:0;
 background:#000;
 width:200px;
 padding:20px;
+border-radius:8px;
 }
 
 #nav-menu.active{
 display:flex;
 }
 
+.menu-toggle{
+display:block;
+font-size:28px;
+cursor:pointer;
+} 
+ 
 } 
 
