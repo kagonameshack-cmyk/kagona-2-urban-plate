@@ -55,11 +55,14 @@ cursor:pointer;
 
 .hero{
 height:100vh;
-background:url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0") center/cover no-repeat;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
+transition: background-image 1.5s ease-in-out;
 }
 
 .hero-overlay{
