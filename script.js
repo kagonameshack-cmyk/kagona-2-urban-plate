@@ -1,34 +1,50 @@
-// MOBILE HAMBURGER MENU
+// ================================
+// MOBILE HAMBURGER MENU (FIXED)
+// ================================
 
 const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
 
+if(menuToggle && navMenu){
+
 menuToggle.addEventListener("click", () => {
-if(navMenu.style.display === "flex"){
-navMenu.style.display = "none";
-}else{
-navMenu.style.display = "flex";
-}
+
+navMenu.classList.toggle("active");
+
 });
 
+}
 
+
+// ================================
 // STICKY NAVBAR SCROLL EFFECT
+// ================================
 
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
 
+if(navbar){
+
 if(window.scrollY > 50){
+
 navbar.style.background = "rgba(0,0,0,0.95)";
 navbar.style.transition = "0.4s";
+
 }else{
+
 navbar.style.background = "rgba(0,0,0,0.7)";
+
+}
+
 }
 
 });
 
 
+// ================================
 // HERO IMAGE ROTATION (20 images)
+// ================================
 
 const hero = document.querySelector(".hero");
 
@@ -59,6 +75,10 @@ const heroImages = [
 
 let heroIndex = 0;
 
+if(hero){
+
+hero.style.backgroundImage = `url(${heroImages[0]})`;
+
 setInterval(() => {
 
 heroIndex++;
@@ -71,14 +91,18 @@ hero.style.backgroundImage = `url(${heroImages[heroIndex]})`;
 
 },5000);
 
+}
 
 
-
+// ================================
 // LIGHTBOX GALLERY
+// ================================
 
 const galleryImages = document.querySelectorAll(".gallery-grid img");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
+
+if(galleryImages){
 
 galleryImages.forEach(img => {
 
@@ -91,6 +115,9 @@ lightboxImg.src = img.src;
 
 });
 
+}
+
+if(lightbox){
 
 lightbox.addEventListener("click", () => {
 
@@ -98,31 +125,14 @@ lightbox.style.display = "none";
 
 });
 
-
-
-
-// SCROLL REVEAL ANIMATION
-
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-
-sections.forEach(section => {
-
-const sectionTop = section.getBoundingClientRect().top;
-const triggerPoint = window.innerHeight / 1.2;
-
-if(sectionTop < triggerPoint){
-section.style.opacity = "1";
-section.style.transform = "translateY(0)";
 }
 
-});
 
-});
+// ================================
+// SCROLL REVEAL ANIMATION
+// ================================
 
-
-// INITIAL STYLE FOR ANIMATION
+const sections = document.querySelectorAll("section");
 
 sections.forEach(section => {
 
@@ -132,10 +142,28 @@ section.style.transition = "1s";
 
 });
 
+window.addEventListener("scroll", () => {
+
+sections.forEach(section => {
+
+const sectionTop = section.getBoundingClientRect().top;
+const triggerPoint = window.innerHeight / 1.2;
+
+if(sectionTop < triggerPoint){
+
+section.style.opacity = "1";
+section.style.transform = "translateY(0)";
+
+}
+
+});
+
+});
 
 
-
+// ================================
 // RESERVATION FORM INTERACTION
+// ================================
 
 const reservationForm = document.querySelector(".reservation form");
 
@@ -154,48 +182,33 @@ reservationForm.reset();
 }
 
 
-
-
-// PREMIUM BACKGROUND VIOLIN MUSIC
+// ================================
+// VIOLIN BACKGROUND MUSIC (FIXED)
+// ================================
 
 const violinMusic = new Audio(
 "https://cdn.pixabay.com/download/audio/2022/03/15/audio_6dfb5b1d14.mp3?filename=romantic-background-110191.mp3"
 );
 
 violinMusic.loop = true;
-violinMusic.volume = 0.3;
+violinMusic.volume = 0.35;
 
+// play after user interaction
 
-// Play music only after user interaction (browser requirement)
-
-document.addEventListener("click", () => {
+function startMusic(){
 
 violinMusic.play().catch(()=>{});
 
-},{ once:true });
+document.removeEventListener("click", startMusic);
 
-
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-
-let playing = false;
-
-musicBtn.addEventListener("click", () => {
-
-if(playing){
-music.pause();
-musicBtn.innerText = "🎻 Music";
-playing = false;
-}else{
-music.play();
-musicBtn.innerText = "🔇 Stop";
-playing = true;
 }
 
-});
+document.addEventListener("click", startMusic);
 
 
-// SMOOTH SCROLL FOR NAV LINKS
+// ================================
+// SMOOTH SCROLL
+// ================================
 
 document.querySelectorAll("nav a").forEach(anchor => {
 
@@ -205,9 +218,13 @@ e.preventDefault();
 
 const target = document.querySelector(this.getAttribute("href"));
 
+if(target){
+
 target.scrollIntoView({
-behavior: "smooth"
+behavior:"smooth"
 });
+
+}
 
 });
 
