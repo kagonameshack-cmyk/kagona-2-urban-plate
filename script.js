@@ -175,6 +175,24 @@ violinMusic.play().catch(()=>{});
 },{ once:true });
 
 
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+let playing = false;
+
+musicBtn.addEventListener("click", () => {
+
+if(playing){
+music.pause();
+musicBtn.innerText = "🎻 Music";
+playing = false;
+}else{
+music.play();
+musicBtn.innerText = "🔇 Stop";
+playing = true;
+}
+
+});
 
 
 // SMOOTH SCROLL FOR NAV LINKS
