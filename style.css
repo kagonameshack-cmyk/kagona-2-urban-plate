@@ -55,14 +55,11 @@ cursor:pointer;
 
 .hero{
 height:100vh;
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+background:url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0") center/cover no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-transition: background-image 1.5s ease-in-out;
 }
 
 .hero-overlay{
@@ -427,60 +424,5 @@ font-size:32px;
 .reservation{
 padding:80px 20px;
 }
-/* Background Music Button */
 
-.music-btn{
-position: fixed;
-bottom: 110px;
-right: 20px;
-background: #000;
-color: #fff;
-border: none;
-padding: 12px 16px;
-border-radius: 30px;
-font-size: 16px;
-cursor: pointer;
-box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-z-index: 999;
-transition: 0.3s;
 }
-
-.music-btn:hover{
-background: #c9a227;
-transform: scale(1.05);
-}
-
- #nav-menu{
-display: flex;
-}
-
-#nav-menu.active{
-display: flex;
-}
-
-@media(max-width:768px){
-
-#nav-menu{
-display: none;
-flex-direction: column;
-position: absolute;
-top:70px;
-right:0;
-background:#000;
-width:200px;
-padding:20px;
-border-radius:8px;
-}
-
-#nav-menu.active{
-display:flex;
-}
-
-.menu-toggle{
-display:block;
-font-size:28px;
-cursor:pointer;
-} 
- 
-} 
-
