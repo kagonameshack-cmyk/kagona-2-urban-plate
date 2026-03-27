@@ -4,11 +4,12 @@ const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");
 
 menuToggle.addEventListener("click", () => {
-
-navMenu.classList.toggle("active");
-
+if(navMenu.style.display === "flex"){
+navMenu.style.display = "none";
+}else{
+navMenu.style.display = "flex";
+}
 });
-
 
 
 // STICKY NAVBAR SCROLL EFFECT
@@ -25,8 +26,6 @@ navbar.style.background = "rgba(0,0,0,0.7)";
 }
 
 });
-
-
 
 
 // HERO IMAGE ROTATION (20 images)
@@ -59,8 +58,6 @@ const heroImages = [
 ];
 
 let heroIndex = 0;
-// Set first image
-hero.style.backgroundImage = `url(${heroImages[0]})`;
 
 setInterval(() => {
 
@@ -94,6 +91,7 @@ lightboxImg.src = img.src;
 
 });
 
+
 lightbox.addEventListener("click", () => {
 
 lightbox.style.display = "none";
@@ -123,6 +121,9 @@ section.style.transform = "translateY(0)";
 
 });
 
+
+// INITIAL STYLE FOR ANIMATION
+
 sections.forEach(section => {
 
 section.style.opacity = "0";
@@ -134,7 +135,7 @@ section.style.transition = "1s";
 
 
 
-// RESERVATION FORM
+// RESERVATION FORM INTERACTION
 
 const reservationForm = document.querySelector(".reservation form");
 
@@ -155,7 +156,7 @@ reservationForm.reset();
 
 
 
-// PREMIUM VIOLIN BACKGROUND MUSIC
+// PREMIUM BACKGROUND VIOLIN MUSIC
 
 const violinMusic = new Audio(
 "https://cdn.pixabay.com/download/audio/2022/03/15/audio_6dfb5b1d14.mp3?filename=romantic-background-110191.mp3"
@@ -165,39 +166,18 @@ violinMusic.loop = true;
 violinMusic.volume = 0.3;
 
 
+// Play music only after user interaction (browser requirement)
 
-// MUSIC BUTTON CONTROL
+document.addEventListener("click", () => {
 
-const musicBtn = document.querySelector(".music-btn");
+violinMusic.play().catch(()=>{});
 
-let musicPlaying = false;
-
-if(musicBtn){
-
-musicBtn.addEventListener("click", () => {
-
-if(musicPlaying){
-
-violinMusic.pause();
-musicBtn.innerHTML = "🎻 Music";
-
-}else{
-
-violinMusic.play();
-musicBtn.innerHTML = "🔇 Stop Music";
-
-}
-
-musicPlaying = !musicPlaying;
-
-});
-
-}
+},{ once:true });
 
 
 
 
-// SMOOTH SCROLL
+// SMOOTH SCROLL FOR NAV LINKS
 
 document.querySelectorAll("nav a").forEach(anchor => {
 
@@ -207,13 +187,9 @@ e.preventDefault();
 
 const target = document.querySelector(this.getAttribute("href"));
 
-if(target){
-
 target.scrollIntoView({
 behavior: "smooth"
 });
-
-}
 
 });
 
